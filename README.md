@@ -47,7 +47,6 @@ _If there are duplicate practice addresses in the API call, all duplicates will 
 * [currencylayer API](https://currencylayer.com)
 * [newsAPI](https://newsapi.org/)
 * [Free Stock Chart - Ticker](http://widgets.freestockcharts.com/)
-* [liScroll (a jQuery News Ticker made easy) 1.0](http://www.gcmingati.net/wordpress/wp-content/lab/jquery/newsticker/jq-liscroll/scrollanimate.html)
 * Postman
 
 ### License

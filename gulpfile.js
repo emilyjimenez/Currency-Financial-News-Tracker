@@ -21,6 +21,9 @@ var lib = require('bower-files')({
   }
 });
 
+var browserSync = require('browser-sync').create();
+var babelify = require('babelify');
+
 gulp.task('bowerCSS', function () {
   return gulp.src(lib.ext('css').files)
     .pipe(concat('vendor.css'))
@@ -43,10 +46,13 @@ gulp.task('jshint', function(){
 });
 
 gulp.task('jsBrowserify', ['concatInterface'], function() {
-  return browserify({ entries: ['./tmp/allConcat.js'] })
-  .bundle()
-  .pipe(source('app.js'))
-  .pipe(gulp.dest('./build/js'));
+  return browserify({ entries: ['./tmp/allConcat.js']})
+    .transform(babelify.configure({
+      presets: ['es2015']
+    }))
+    .bundle()
+    .pipe(source('app.js'))
+    .pipe(gulp.dest('./build/js'))
 });
 
 gulp.task('concatInterface', function() {
@@ -83,6 +89,8 @@ gulp.task('serve', function() {
   });
   gulp.watch(['js/*.js'], ['jsBuild']);
   gulp.watch(['bower.json'], ['bowerBuild']);
+  gulp.watch(['*.html'], ['htmlBuild']);
+  gulp.watch(['css/*.css'], ['cssBuild'])
 });
 
 gulp.task('jsBuild', ['jsBrowserify', 'jshint'], function(){
@@ -91,4 +99,14 @@ gulp.task('jsBuild', ['jsBrowserify', 'jshint'], function(){
 
 gulp.task('bowerBuild', ['bower'], function(){
   browserSync.reload();
+});
+
+gulp.task('htmlBuild', function(){
+  browserSync.reload();
+});
+
+gulp.task('cssBuild', function() {
+  gulp.src(['css/*.css'])
+  .pipe(concat('styles.css'))
+  .pipe(gulp.dest('./build/css'))
 });

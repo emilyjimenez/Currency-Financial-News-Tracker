@@ -19,18 +19,222 @@
     </script>
     <!-- End Scrolling Ticker Widget -->
     <!-- Currency Ticker Start-->
-    <div class="tickercontainer">
-      <ul class="newsticker" id="ticker01">
-        <li><span id="btc-usd-tick"><font color="red">BTC/USD GOES HERE</font></span><a href="#">More info here</a></li>
-        <li><span id="eth-usd-tick"><font color="red">ETH/USD GOES HERE</font></span><a href="#">More info here too</a></li>
-        <li><span id="btc-eth-tick"><font color="red">BTC/ETH GOES HERE</font></span><a href="#">Also more info</a></li>
-        <!-- eccetera -->
-      </ul>
-    </div>
+    <div class="marquee">
+      <div class="marquee-content">
+       <span class="item-collection-1">
+         <span class="item1">Cryptocurrencies</span>
+         <span class="item1">BTC/USD HERE</span>
+         <span class="item1">ETH/USD HERE</span>
+         <span class="item1">LTC/USD HERE</span>
+         <span class="item1">XRP/USD HERE</span>
+         <span class="item1">ZEC/USD HERE</span>
+         <span class="item1">POT/USD HERE</span>
+       </span>
+       <span class="item-collection-2">
+         <span class="item2">Foreign Exchange</span>
+         <span class="item2">🇬🇧 GBP/USD HERE</span>
+         <span class="item2">🇨🇦 CAD/USD HERE</span>
+         <span class="item2">🇦🇺 AUD/USD HERE</span>
+         <span class="item2">🇯🇵 JPY/USD HERE</span>
+         <span class="item2">🇨🇭 CHF/USD HERE</span>
+         <span class="item2">🇪🇺 EUR/USD HERE</span>
+         <span class="item2">🇿🇼 ZWL/USD HERE</span>
+       </span>
+     </div>
+   </div>
     <!-- Currency ticker end -->
     <div class="container">
       <h1>Currency Financial Tracker</h1>
       <h3><em>Find exchange rates, market info, financial news and more!</em></h3>
+      <p class="lead">Find the values of currencies all over the world! CFNT will provide exchange rates, detailed information about specific currencies and news coverage on the selected currency.</p>
+      <em><strong>**Note from the developer:</strong> Currencylayer's free API plan only alows for USD source information, so all exchange rates will be displayed in ($)USD format.</em><br>
+      <h3>Exchange Rates</h3>
+      <br>
+      <h4>Find A Foreign Exchange Rate</h4>
+      <p>Select a foreign currency and click submit to show live exchange rate information.</p>
+      <div class="form-group">
+        <label for="sel1">Foreign Currencies:</label>
+        <select class="form-control" id="foreign-exchange-select">
+          <option>"AED": "United Arab Emirates Dirham"</option>
+          <option>"AFN": "Afghan Afghani"</option>
+          <option>"ALL": "Albanian Lek"</option>
+          <option>"AMD": "Armenian Dram"</option>
+          <option>"ANG": "Netherlands Antillean Guilder"</option>
+          <option>"AOA": "Angolan Kwanza"</option>
+          <option>"ARS": "Argentine Peso"</option>
+          <option>"AUD": "Australian Dollar"</option>
+          <option>"AWG": "Aruban Florin"</option>
+          <option>"AZN": "Azerbaijani Manat"</option>
+          <option>"BAM": "Bosnia-Herzegovina Convertible Mark"</option>
+          <option>"BBD": "Barbadian Dollar"</option>
+          <option>"BDT": "Bangladeshi Taka"</option>
+          <option>"BGN": "Bulgarian Lev"</option>
+          <option>"BHD": "Bahraini Dinar"</option>
+          <option>"BIF": "Burundian Franc"</option>
+          <option>"BMD": "Bermudan Dollar"</option>
+          <option>"BND": "Brunei Dollar"</option>
+          <option>"BOB": "Bolivian Boliviano"</option>
+          <option>"BRL": "Brazilian Real"</option>
+          <option>"BSD": "Bahamian Dollar"</option>
+          <option>"BTC": "Bitcoin"</option>
+          <option>"BTN": "Bhutanese Ngultrum"</option>
+          <option>"BWP": "Botswanan Pula"</option>
+          <option>"BYN": "New Belarusian Ruble"</option>
+          <option>"BYR": "Belarusian Ruble"</option>
+          <option>"BZD": "Belize Dollar"</option>
+          <option>"CAD": "Canadian Dollar"</option>
+          <option>"CDF": "Congolese Franc"</option>
+          <option>"CHF": "Swiss Franc"</option>
+          <option>"CLF": "Chilean Unit of Account (UF)"</option>
+          <option>"CLP": "Chilean Peso"</option>
+          <option>"CNY": "Chinese Yuan"</option>
+          <option>"COP": "Colombian Peso"</option>
+          <option>"CRC": "Costa Rican Colón"</option>
+          <option>"CUC": "Cuban Convertible Peso"</option>
+          <option>"CUP": "Cuban Peso"</option>
+          <option>"CVE": "Cape Verdean Escudo"</option>
+          <option>"CZK": "Czech Republic Koruna"</option>
+          <option>"DJF": "Djiboutian Franc"</option>
+          <option>"DKK": "Danish Krone"</option>
+          <option>"DOP": "Dominican Peso"</option>
+          <option>"DZD": "Algerian Dinar"</option>
+          <option>"EGP": "Egyptian Pound"</option>
+          <option>"ERN": "Eritrean Nakfa"</option>
+          <option>"ETB": "Ethiopian Birr"</option>
+          <option>"EUR": "Euro"</option>
+          <option>"FJD": "Fijian Dollar"</option>
+          <option>"FKP": "Falkland Islands Pound"</option>
+          <option>"GBP": "British Pound Sterling"</option>
+          <option>"GEL": "Georgian Lari"</option>
+          <option>"GGP": "Guernsey Pound"</option>
+          <option>"GHS": "Ghanaian Cedi"</option>
+          <option>"GIP": "Gibraltar Pound"</option>
+          <option>"GMD": "Gambian Dalasi"</option>
+          <option>"GNF": "Guinean Franc"</option>
+          <option>"GTQ": "Guatemalan Quetzal"</option>
+          <option>"GYD": "Guyanaese Dollar"</option>
+          <option>"HKD": "Hong Kong Dollar"</option>
+          <option>"HNL": "Honduran Lempira"</option>
+          <option>"HRK": "Croatian Kuna"</option>
+          <option>"HTG": "Haitian Gourde"</option>
+          <option>"HUF": "Hungarian Forint"</option>
+          <option>"IDR": "Indonesian Rupiah"</option>
+          <option>"ILS": "Israeli New Sheqel"</option>
+          <option>"IMP": "Manx pound"</option>
+          <option>"INR": "Indian Rupee"</option>
+          <option>"IQD": "Iraqi Dinar"</option>
+          <option>"IRR": "Iranian Rial"</option>
+          <option>"ISK": "Icelandic Króna"</option>
+          <option>"JEP": "Jersey Pound"</option>
+          <option>"JMD": "Jamaican Dollar"</option>
+          <option>"JOD": "Jordanian Dinar"</option>
+          <option>"JPY": "Japanese Yen"</option>
+          <option>"KES": "Kenyan Shilling"</option>
+          <option>"KGS": "Kyrgystani Som"</option>
+          <option>"KHR": "Cambodian Riel"</option>
+          <option>"KMF": "Comorian Franc"</option>
+          <option>"KPW": "North Korean Won"</option>
+          <option>"KRW": "South Korean Won"</option>
+          <option>"KWD": "Kuwaiti Dinar"</option>
+          <option>"KYD": "Cayman Islands Dollar"</option>
+          <option>"KZT": "Kazakhstani Tenge"</option>
+          <option>"LAK": "Laotian Kip"</option>
+          <option>"LBP": "Lebanese Pound"</option>
+          <option>"LKR": "Sri Lankan Rupee"</option>
+          <option>"LRD": "Liberian Dollar"</option>
+          <option>"LSL": "Lesotho Loti"</option>
+          <option>"LTL": "Lithuanian Litas"</option>
+          <option>"LVL": "Latvian Lats"</option>
+          <option>"LYD": "Libyan Dinar"</option>
+          <option>"MAD": "Moroccan Dirham"</option>
+          <option>"MDL": "Moldovan Leu"</option>
+          <option>"MGA": "Malagasy Ariary"</option>
+          <option>"MKD": "Macedonian Denar"</option>
+          <option>"MMK": "Myanma Kyat"</option>
+          <option>"MNT": "Mongolian Tugrik"</option>
+          <option>"MOP": "Macanese Pataca"</option>
+          <option>"MRO": "Mauritanian Ouguiya"</option>
+          <option>"MUR": "Mauritian Rupee"</option>
+          <option>"MVR": "Maldivian Rufiyaa"</option>
+          <option>"MWK": "Malawian Kwacha"</option>
+          <option>"MXN": "Mexican Peso"</option>
+          <option>"MYR": "Malaysian Ringgit"</option>
+          <option>"MZN": "Mozambican Metical"</option>
+          <option>"NAD": "Namibian Dollar"</option>
+          <option>"NGN": "Nigerian Naira"</option>
+          <option>"NIO": "Nicaraguan Córdoba"</option>
+          <option>"NOK": "Norwegian Krone"</option>
+          <option>"NPR": "Nepalese Rupee"</option>
+          <option>"NZD": "New Zealand Dollar"</option>
+          <option>"OMR": "Omani Rial"</option>
+          <option>"PAB": "Panamanian Balboa"</option>
+          <option>"PEN": "Peruvian Nuevo Sol"</option>
+          <option>"PGK": "Papua New Guinean Kina"</option>
+          <option>"PHP": "Philippine Peso"</option>
+          <option>"PKR": "Pakistani Rupee"</option>
+          <option>"PLN": "Polish Zloty"</option>
+          <option>"PYG": "Paraguayan Guarani"</option>
+          <option>"QAR": "Qatari Rial"</option>
+          <option>"RON": "Romanian Leu"</option>
+          <option>"RSD": "Serbian Dinar"</option>
+          <option>"RUB": "Russian Ruble"</option>
+          <option>"RWF": "Rwandan Franc"</option>
+          <option>"SAR": "Saudi Riyal"</option>
+          <option>"SBD": "Solomon Islands Dollar"</option>
+          <option>"SCR": "Seychellois Rupee"</option>
+          <option>"SDG": "Sudanese Pound"</option>
+          <option>"SEK": "Swedish Krona"</option>
+          <option>"SGD": "Singapore Dollar"</option>
+          <option>"SHP": "Saint Helena Pound"</option>
+          <option>"SLL": "Sierra Leonean Leone"</option>
+          <option>"SOS": "Somali Shilling"</option>
+          <option>"SRD": "Surinamese Dollar"</option>
+          <option>"STD": "São Tomé and Príncipe Dobra"</option>
+          <option>"SVC": "Salvadoran Colón"</option>
+          <option>"SYP": "Syrian Pound"</option>
+          <option>"SZL": "Swazi Lilangeni"</option>
+          <option>"THB": "Thai Baht"</option>
+          <option>"TJS": "Tajikistani Somoni"</option>
+          <option>"TMT": "Turkmenistani Manat"</option>
+          <option>"TND": "Tunisian Dinar"</option>
+          <option>"TOP": "Tongan Paʻanga"</option>
+          <option>"TRY": "Turkish Lira"</option>
+          <option>"TTD": "Trinidad and Tobago Dollar"</option>
+          <option>"TWD": "New Taiwan Dollar"</option>
+          <option>"TZS": "Tanzanian Shilling"</option>
+          <option>"UAH": "Ukrainian Hryvnia"</option>
+          <option>"UGX": "Ugandan Shilling"</option>
+          <option>"USD": "United States Dollar"</option>
+          <option>"UYU": "Uruguayan Peso"</option>
+          <option>"UZS": "Uzbekistan Som"</option>
+          <option>"VEF": "Venezuelan Bolívar Fuerte"</option>
+          <option>"VND": "Vietnamese Dong"</option>
+          <option>"VUV": "Vanuatu Vatu"</option>
+          <option>"WST": "Samoan Tala"</option>
+          <option>"XAF": "CFA Franc BEAC"</option>
+          <option>"XAG": "Silver (troy ounce)"</option>
+          <option>"XAU": "Gold (troy ounce)"</option>
+          <option>"XCD": "East Caribbean Dollar"</option>
+          <option>"XDR": "Special Drawing Rights"</option>
+          <option>"XOF": "CFA Franc BCEAO"</option>
+          <option>"XPF": "CFP Franc"</option>
+          <option>"YER": "Yemeni Rial"</option>
+          <option>"ZAR": "South African Rand"</option>
+          <option>"ZMK": "Zambian Kwacha (pre-2013)"</option>
+          <option>"ZMW": "Zambian Kwacha"</option>
+          <option>"ZWL": "Zimbabwean Dollar"</option>
+        </select>
+      </div>
+      <button id="submit-foreign-exchange" class="btn btn-success" type="button">Submit</button>
+      <h4>Find A Cryptocurrency Exchange Rate</h4>
+      <p>Select a cryptocurrency and click submit to show live exchange rate information.</p>
+      <div class="form-group">
+        <label for="sel1">Cryptocurrencies:</label>
+        <select class="form-control" id="crypto-exchange-select">
+          <option>1</option>
+        </select>
+      </div>
+      <button id="submit-crypto-exchange" class="btn btn-success" type="button">Submit</button>
     </div>
   </body>
 </html>
