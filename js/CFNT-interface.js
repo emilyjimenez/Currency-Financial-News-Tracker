@@ -4,7 +4,7 @@ import { CryptoLookup } from './../js/cryptolookup.js';
 
 let displayData = function(response) {
   $("#foreign-exchange-result").show();
-  if (response.success === true) {
+  if (response !== null) {
     let currencyRate = response.quotes;
     $("#foreign-exchange-list").append(`<li>${currencyRate}</li>`);
   } else {
@@ -20,7 +20,7 @@ $(document).ready(function() {
   let newCurrencyLookup = new CurrencyLookup();
   $("#foreign-exchange-select").submit(function(event){
     event.preventDefault();
-    let foreignCurrency = $("#foreign-currency-option").val();
-    newCurrencyLookup.getData(foreignCurrency, displayData, error);
+    let response = $("#foreign-currency-option").val();
+    newCurrencyLookup.getData(response, displayData, error);
   });
 });

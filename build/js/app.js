@@ -3,34 +3,20 @@ exports.apiKeyNews = "KEY GOES HERE";
 exports.apiKeyCurrency = "b52a3b45df5c0e5abc5f6a4a7390f8f3";
 
 },{}],2:[function(require,module,exports){
+// export class CryptoLookup {
+//   constructor() {
+//
+//   }
+//   getData(response, displayData, error) {
+//     $.get(`URLHERE`)
+//     .then(function(response){
+//       displayData(response);
+//     }).fail(function(error) {
+//       throw(error);
+//     });
+//   }
+// }
 "use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var CryptoLookup = exports.CryptoLookup = function () {
-  function CryptoLookup() {
-    _classCallCheck(this, CryptoLookup);
-  }
-
-  _createClass(CryptoLookup, [{
-    key: "getData",
-    value: function getData(response, displayData, error) {
-      $.get("URLHERE").then(function (response) {
-        displayData(response);
-      }).fail(function (error) {
-        throw error;
-      });
-    }
-  }]);
-
-  return CryptoLookup;
-}();
 
 },{}],3:[function(require,module,exports){
 "use strict";
@@ -57,7 +43,7 @@ var CurrencyLookup = exports.CurrencyLookup = function () {
       $.get("http://apilayer.net/api/live?access_key=" + _env.apiKeyCurrency + "&currencies=" + response + "&format=1").then(function (response) {
 
         displayData(response);
-        console.log(resonse);
+        console.log(response);
       }).fail(function (error) {
         throw error;
       });
@@ -68,39 +54,24 @@ var CurrencyLookup = exports.CurrencyLookup = function () {
 }();
 
 },{"./../.env":1}],4:[function(require,module,exports){
+// import {apiKeyNews } from "./../.env";
+//
+// export class NewsLookup {
+//   constructor() {
+//
+//   }
+//   getData(response, displayData, error) {
+//     $.get(`URLHERE`)
+//     .then(function(response){
+//       displayData(response);
+//     }).fail(function(error) {
+//       throw(error);
+//     });
+//   }
+// }
 "use strict";
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.NewsLookup = undefined;
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _env = require("./../.env");
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var NewsLookup = exports.NewsLookup = function () {
-  function NewsLookup() {
-    _classCallCheck(this, NewsLookup);
-  }
-
-  _createClass(NewsLookup, [{
-    key: "getData",
-    value: function getData(response, displayData, error) {
-      $.get("URLHERE").then(function (response) {
-        displayData(response);
-      }).fail(function (error) {
-        throw error;
-      });
-    }
-  }]);
-
-  return NewsLookup;
-}();
-
-},{"./../.env":1}],5:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 'use strict';
 
 var _currencylookup = require('./../js/currencylookup.js');
@@ -111,7 +82,7 @@ var _cryptolookup = require('./../js/cryptolookup.js');
 
 var displayData = function displayData(response) {
   $("#foreign-exchange-result").show();
-  if (response.success === true) {
+  if (response !== null) {
     var currencyRate = response.quotes;
     $("#foreign-exchange-list").append('<li>' + currencyRate + '</li>');
   } else {
@@ -127,8 +98,8 @@ $(document).ready(function () {
   var newCurrencyLookup = new _currencylookup.CurrencyLookup();
   $("#foreign-exchange-select").submit(function (event) {
     event.preventDefault();
-    var foreignCurrency = $("#foreign-currency-option").val();
-    newCurrencyLookup.getData(foreignCurrency, displayData, error);
+    var response = $("#foreign-currency-option").val();
+    newCurrencyLookup.getData(response, displayData, error);
   });
 });
 

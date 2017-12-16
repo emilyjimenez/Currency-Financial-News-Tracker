@@ -7,7 +7,7 @@ export class CurrencyLookup {
     $.get(`http://apilayer.net/api/live?access_key=${apiKeyCurrency}&currencies=${response}&format=1`).then(function(response){
 
       displayData(response);
-      console.log(resonse);
+      console.log(response);
     }).fail(function(error) {
       throw(error);
     });
