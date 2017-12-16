@@ -45,6 +45,7 @@ _If there are duplicate practice addresses in the API call, all duplicates will 
 * JQuery
 * Google Chrome
 * [currencylayer API](https://currencylayer.com)
+* [Coin Market Cap API](https://coinmarketcap.com)
 * [newsAPI](https://newsapi.org/)
 * [Free Stock Chart - Ticker](http://widgets.freestockcharts.com/)
 * Postman

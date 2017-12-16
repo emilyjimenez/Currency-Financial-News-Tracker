@@ -60,3 +60,8 @@
   }
 }
 /*end marquee style*/
+
+/*results*/
+#foreign-exchange-result {
+  display: none;
+}

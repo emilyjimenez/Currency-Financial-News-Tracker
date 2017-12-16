@@ -2,12 +2,11 @@ import {apiKeyCurrency } from "./../.env";
 
 export class CurrencyLookup {
   constructor() {
-
   }
-  getData(response, displayData, error) {
-    $.get(`URLHERE`)
+  getCurrencyData(response, displayCurrencyData, error) {
+    $.get(`http://apilayer.net/api/live?access_key=${apiKeyCurrency}&currencies=${response}`)
     .then(function(response){
-      displayData(response);
+      displayCurrencyData(response);
     }).fail(function(error) {
       throw(error);
     });
