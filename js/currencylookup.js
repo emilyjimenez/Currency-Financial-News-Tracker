@@ -1,4 +1,4 @@
-import {apiKeyCurrency } from "./../.env";
+import { apiKeyCurrency } from "./../.env";
 
 export class CurrencyLookup {
   constructor() {
@@ -7,6 +7,7 @@ export class CurrencyLookup {
     $.get(`http://apilayer.net/api/live?access_key=${apiKeyCurrency}&currencies=${response}`)
     .then(function(response){
       displayCurrencyData(response);
+      console.log(resonse);
     }).fail(function(error) {
       throw(error);
     });

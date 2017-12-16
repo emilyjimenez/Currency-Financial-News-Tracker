@@ -56,6 +56,7 @@ var CurrencyLookup = exports.CurrencyLookup = function () {
     value: function getCurrencyData(response, displayCurrencyData, error) {
       $.get("http://apilayer.net/api/live?access_key=" + _env.apiKeyCurrency + "&currencies=" + response).then(function (response) {
         displayCurrencyData(response);
+        console.log(resonse);
       }).fail(function (error) {
         throw error;
       });
@@ -107,8 +108,27 @@ var _newslookup = require('./../js/newslookup.js');
 
 var _cryptolookup = require('./../js/cryptolookup.js');
 
-var displayCurrencyData = function displayCurrencyData(response) {};
+var displayCurrencyData = function displayCurrencyData(response) {
+  $("#foreign-exchange-result").show();
+  if (response.success === true) {
+    var currencyRate = response.quotes;
+    $("#foreign-exchange-list").append('<li>' + currencyRate + '</li>');
+  } else {
+    $("#foreign-exchange-list").append("No data");
+  }
+};
 
-$(document).ready(function () {});
+var error = function error(_error) {
+  $("#foreign-exchange-result").text("Uh oh... something went wrong");
+};
+
+$(document).ready(function () {
+  var newCurrencyLookup = new _currencylookup.CurrencyLookup();
+  $("#foreign-exchange-select").submit(function (event) {
+    event.preventDefault();
+    var foreignCurrency = $("#foreign-currency-option").val();
+    newCurrencyLookup.getCurrencyData(foreignCurrency, displayCurrencyData, error);
+  });
+});
 
 },{"./../js/cryptolookup.js":2,"./../js/currencylookup.js":3,"./../js/newslookup.js":4}]},{},[5]);

@@ -16,15 +16,7 @@
   left: 0%;
   animation: swap 45s linear infinite;
 }
-/*@keyframes swap {
-  0%, 50% {
-    left: 0%;
-  }
-  50.01%,
-  100% {
-    left: 100%;
-  }
-}*/
+
 .marquee-content:hover {
   animation-play-state: paused
 }
