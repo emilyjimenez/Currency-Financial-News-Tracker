@@ -52,10 +52,11 @@ var CurrencyLookup = exports.CurrencyLookup = function () {
   }
 
   _createClass(CurrencyLookup, [{
-    key: "getCurrencyData",
-    value: function getCurrencyData(response, displayCurrencyData, error) {
-      $.get("http://apilayer.net/api/live?access_key=" + _env.apiKeyCurrency + "&currencies=" + response).then(function (response) {
-        displayCurrencyData(response);
+    key: "getData",
+    value: function getData(response, displayData, error) {
+      $.get("http://apilayer.net/api/live?access_key=" + _env.apiKeyCurrency + "&currencies=" + response + "&format=1").then(function (response) {
+
+        displayData(response);
         console.log(resonse);
       }).fail(function (error) {
         throw error;
@@ -108,7 +109,7 @@ var _newslookup = require('./../js/newslookup.js');
 
 var _cryptolookup = require('./../js/cryptolookup.js');
 
-var displayCurrencyData = function displayCurrencyData(response) {
+var displayData = function displayData(response) {
   $("#foreign-exchange-result").show();
   if (response.success === true) {
     var currencyRate = response.quotes;
@@ -127,7 +128,7 @@ $(document).ready(function () {
   $("#foreign-exchange-select").submit(function (event) {
     event.preventDefault();
     var foreignCurrency = $("#foreign-currency-option").val();
-    newCurrencyLookup.getCurrencyData(foreignCurrency, displayCurrencyData, error);
+    newCurrencyLookup.getData(foreignCurrency, displayData, error);
   });
 });
 
