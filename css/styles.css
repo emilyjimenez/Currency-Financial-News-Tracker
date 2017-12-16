@@ -61,6 +61,15 @@
 }
 /*end marquee style*/
 
+.bg-img {
+  background-color: grey;
+  background-image: url("../img/world-currency-bg.jpeg");
+  background-blend-mode: screen;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vw;
+}
+
 /*results*/
 #foreign-exchange-result {
   display: none;

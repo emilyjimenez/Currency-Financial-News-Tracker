@@ -4,7 +4,7 @@ import { CryptoLookup } from './../js/cryptolookup.js';
 
 let displayCurrencyData = function(response) {
 
-}
+};
 
 $(document).ready(function() {
 
