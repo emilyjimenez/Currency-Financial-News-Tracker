@@ -6,7 +6,7 @@
 
 ###### _12.15.2017_
 
-##Write Up/Final Thoughts
+## Write Up/Final Thoughts
 
 _For this project I had my own free reign and decided to focus on API call backs since I missed a lot of class that week and plan on using an API for my final group project. Also, since I am on the back end track, I wanted to play with as much design as I could. I spent 6 hours on Friday building the main components of the app, and getting the APIs to work. I spent the most time on the exchange rate ticker and making the API calls work. I was happy I got the ticker to work, look pretty, display results, and was happy I got the API callback to retrieve the information I needed.
 
