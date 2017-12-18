@@ -5,6 +5,10 @@ body {
   font-family: 'Ubuntu', sans-serif;
 }
 
+h1, h2, h3, h4, h5 {
+  font-weight: 700;
+}
+
 .container {
   background-color: rgba(255, 255, 255, .8);
   height: 100vh;
@@ -17,6 +21,7 @@ body {
   margin: 0 auto;
   overflow: hidden;
   white-space: nowrap;
+  background: #595959;
   border: 1px solid #CCCCCC;
 }
 .marquee-content {
@@ -32,27 +37,41 @@ body {
 .marquee-content:hover {
   animation-play-state: paused
 }
-.item1 {
 
+.item1 {
   display: inline-block;
   height: 32px;
   line-height: 32px;
   text-align: center;
-  width: 140px;
-  background: cyan;
+  width: 150px;
+  background: #5cb85c;
+  transform: skew(20deg);
   vertical-align: top;
-  margin-left: 15px;
 }
+
+.item1 p {
+  transform: skew(-20deg);
+}
+
 .item2 {
   display: inline-block;
   height: 32px;
   line-height: 32px;
   text-align: center;
-  width: 140px;
-  background: magenta;
+  width: 150px;
+  background: #4286f4;
+  transform: skew(20deg);
   vertical-align: top;
-  margin-left: 15px;
 }
+
+.item2 p {
+  transform: skew(-20deg);
+}
+
+.item-title {
+  font-weight: 700;
+}
+
 /* Transition */
 
 @keyframes marquee {

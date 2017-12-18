@@ -47,13 +47,13 @@ var _currencylookup = require("./../js/currencylookup.js");
 // import { CryptoLookup } from './../js/cryptolookup.js';
 
 var displayTickerResults = function displayTickerResults(response) {
-  var usdBTC = response.quotes["USDBTC"];
-  var usdGBP = response.quotes["USDGBP"];
-  var usdCAD = response.quotes["USDCAD"];
-  var usdAUD = response.quotes["USDAUD"];
-  var usdJPY = response.quotes["USDJPY"];
-  var usdCHF = response.quotes["USDCHF"];
-  var usdEUR = response.quotes["USDEUR"];
+  var usdBTC = response.quotes["USDBTC"].toFixed(5);
+  var usdGBP = response.quotes["USDGBP"].toFixed(5);
+  var usdCAD = response.quotes["USDCAD"].toFixed(5);
+  var usdAUD = response.quotes["USDAUD"].toFixed(5);
+  var usdJPY = response.quotes["USDJPY"].toFixed(4);
+  var usdCHF = response.quotes["USDCHF"].toFixed(5);
+  var usdEUR = response.quotes["USDEUR"].toFixed(5);
   $("#btc-usd").text(usdBTC);
   $("#gbp-usd").text(usdGBP);
   $("#cad-usd").text(usdCAD);

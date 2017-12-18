@@ -6,6 +6,25 @@
 
 ###### _12.15.2017_
 
+##Write Up/Final Thoughts
+
+_For this project I had my own free reign and decided to focus on API call backs since I missed a lot of class that week and plan on using an API for my final group project. Also, since I am on the back end track, I wanted to play with as much design as I could. I spent 6 hours on Friday building the main components of the app, and getting the APIs to work. I spent the most time on the exchange rate ticker and making the API calls work. I was happy I got the ticker to work, look pretty, display results, and was happy I got the API callback to retrieve the information I needed.
+
+Unfortunately, I bit off WAY MORE than I could chew. There was no way I could include 3 separate APIs in my app with only 8 hours of work, so I stopped once I got curencylayer to work._
+
+Things I should work on/be thinking about in coming weeks:
+1. Being able to scope work and know how long it will take
+2. Knowing the proper lingo for terms, methods etc
+3. Write a stack overflow question
+4. Learn another coding language
+5. Find more internship opportunities
+
+Priorities for end of course/after Epicodus:
+1. Stay on top of .NET course, no more absent days, be on time everyday.
+2. Try to get adequate sleep
+3. Freshen up on terminology and whiteboarding
+4. Take the PHP for Wordpress course offered by Treehouse
+
 ## Description
 
 _Web app that makes calls to currencylayer API and News API to display currency exchange rates for 168 worldwide currencies including cryptocurrency. Easily find news articles related to currency exchange markets, stock market info, and other financial topics._
@@ -16,7 +35,13 @@ _Web app that makes calls to currencylayer API and News API to display currency 
 
 | Behavior  |  Input | Output  |
 |---|---|---|
-|  |   |   |
+| It will display live financial ticker information | displays foreign exchange information for 1 USD  | ex: USD/JPY 112.6689  |
+| It will display live cryptocurrency info | displays cyrptocurrency rates for 1 USD  | ex: USD/BTC 0.00005  |
+| It will allow user to search for an exchange rate | user selects foreign currency from form, results displayed  | ex: USD/CAD 1.28577  |
+| It will allow user to search for a cryptocurrency rate | displays foreign exchange information for 1 USD  | ex: USD/JPY 112.6689  |
+| It will show news info related to the user selected currency | displays foreign exchange/cryptocurrency news related articles after user submits form  | NA |
+
+
 
 
 
@@ -32,7 +57,7 @@ _Web app that makes calls to currencylayer API and News API to display currency 
 
 ## Known Bugs
 
-_If there are duplicate practice addresses in the API call, all duplicates will be displayed._
+_Cannot load free stock chart ticker... When the script for the ticker was active, I received this error: `API call error: Request header field X-Requested-With is not allowed by Access-Control-Allow-Headers in preflight response.` Still looking for work around..._
 
 ## Technologies Used
 
