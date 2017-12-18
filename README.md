@@ -8,9 +8,9 @@
 
 ## Write Up/Final Thoughts
 
-_For this project I had my own free reign and decided to focus on API call backs since I missed a lot of class that week and plan on using an API for my final group project. Also, since I am on the back end track, I wanted to play with as much design as I could. I spent 6 hours on Friday building the main components of the app, and getting the APIs to work. I spent the most time on the exchange rate ticker and making the API calls work. I was happy I got the ticker to work, look pretty, display results, and was happy I got the API callback to retrieve the information I needed.
+_For this project I had my own free reign and decided to focus on API call backs since I missed a lot of class that week and plan on using an API for my final group project. Also, since I am on the back end track, I wanted to play with as much design as I could. I spent 6 hours on Friday building the main components of the app, and getting the APIs to work. I spent the most time on the exchange rate ticker and making the API calls work. I was happy I got the ticker to work, look pretty, display results, and was happy I got the API callback to retrieve the information I needed._
 
-Unfortunately, I bit off WAY MORE than I could chew. There was no way I could include 3 separate APIs in my app with only 8 hours of work, so I stopped once I got curencylayer to work._
+_Unfortunately, I bit off WAY MORE than I could chew. There was no way I could include 3 separate APIs in my app with only 8 hours of work, so I stopped once I got curencylayer to work._
 
 Things I should work on/be thinking about in coming weeks:
 1. Being able to scope work and know how long it will take
