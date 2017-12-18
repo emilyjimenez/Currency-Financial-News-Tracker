@@ -3,22 +3,6 @@ exports.apiKeyNews = "KEY GOES HERE";
 exports.apiKeyCurrency = "b52a3b45df5c0e5abc5f6a4a7390f8f3";
 
 },{}],2:[function(require,module,exports){
-// export class CryptoLookup {
-//   constructor() {
-//
-//   }
-//   getData(response, displayData, error) {
-//     $.get(`URLHERE`)
-//     .then(function(response){
-//       displayData(response);
-//     }).fail(function(error) {
-//       throw(error);
-//     });
-//   }
-// }
-"use strict";
-
-},{}],3:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -38,12 +22,12 @@ var CurrencyLookup = exports.CurrencyLookup = function () {
   }
 
   _createClass(CurrencyLookup, [{
-    key: "getData",
-    value: function getData(response, displayData, error) {
-      $.get("http://apilayer.net/api/live?access_key=" + _env.apiKeyCurrency + "&currencies=" + response + "&format=1").then(function (response) {
-
-        displayData(response);
-        console.log(response);
+    key: "getCurrencyData",
+    value: function getCurrencyData(response, displayCurrencyData, error) {
+      var sourceCurrency = "USD";
+      var converter = sourceCurrency.concat(response);
+      $.get("http://apilayer.net/api/live?access_key=" + _env.apiKeyCurrency + "&source=" + sourceCurrency + "&currencies=" + response + "&format=1").then(function (response) {
+        displayCurrencyData(response, converter);
       }).fail(function (error) {
         throw error;
       });
@@ -53,38 +37,37 @@ var CurrencyLookup = exports.CurrencyLookup = function () {
   return CurrencyLookup;
 }();
 
-},{"./../.env":1}],4:[function(require,module,exports){
-// import {apiKeyNews } from "./../.env";
-//
-// export class NewsLookup {
-//   constructor() {
-//
-//   }
-//   getData(response, displayData, error) {
-//     $.get(`URLHERE`)
-//     .then(function(response){
-//       displayData(response);
-//     }).fail(function(error) {
-//       throw(error);
-//     });
-//   }
-// }
+},{"./../.env":1}],3:[function(require,module,exports){
 "use strict";
 
-},{}],5:[function(require,module,exports){
-'use strict';
+var _currencylookup = require("./../js/currencylookup.js");
 
-var _currencylookup = require('./../js/currencylookup.js');
+// Will use NewsLookup and CryptoLookup when I have time to add the rest of the APIs...
+// import { NewsLookup } from './../js/newslookup.js';
+// import { CryptoLookup } from './../js/cryptolookup.js';
 
-var _newslookup = require('./../js/newslookup.js');
+var displayTickerResults = function displayTickerResults(response) {
+  var usdBTC = response.quotes["USDBTC"];
+  var usdGBP = response.quotes["USDGBP"];
+  var usdCAD = response.quotes["USDCAD"];
+  var usdAUD = response.quotes["USDAUD"];
+  var usdJPY = response.quotes["USDJPY"];
+  var usdCHF = response.quotes["USDCHF"];
+  var usdEUR = response.quotes["USDEUR"];
+  $("#btc-usd").text(usdBTC);
+  $("#gbp-usd").text(usdGBP);
+  $("#cad-usd").text(usdCAD);
+  $("#aud-usd").text(usdAUD);
+  $("#jpy-usd").text(usdJPY);
+  $("#chf-usd").text(usdCHF);
+  $("#eur-usd").text(usdEUR);
+};
 
-var _cryptolookup = require('./../js/cryptolookup.js');
-
-var displayData = function displayData(response) {
+var displayCurrencyData = function displayCurrencyData(response, converter) {
   $("#foreign-exchange-result").show();
   if (response !== null) {
-    var currencyRate = response.quotes;
-    $("#foreign-exchange-list").append('<li>' + currencyRate + '</li>');
+    var currencyRate = response.quotes[converter];
+    $("#foreign-exchange-list").append("<li>" + converter + " = " + currencyRate + "</li>");
   } else {
     $("#foreign-exchange-list").append("No data");
   }
@@ -95,12 +78,15 @@ var error = function error(_error) {
 };
 
 $(document).ready(function () {
+  var tickerLookup = new _currencylookup.CurrencyLookup();
+  var countries = "BTC,GBP,CAD,AUD,JPY,CHF,EUR,ZWL";
+  tickerLookup.getCurrencyData(countries, displayTickerResults, error);
   var newCurrencyLookup = new _currencylookup.CurrencyLookup();
   $("#foreign-exchange-select").submit(function (event) {
     event.preventDefault();
-    var response = $("#foreign-currency-option").val();
-    newCurrencyLookup.getData(response, displayData, error);
+    var foreignCurrency = $("#foreign-currency-option").val();
+    newCurrencyLookup.getCurrencyData(foreignCurrency, displayCurrencyData, error);
   });
 });
 
-},{"./../js/cryptolookup.js":2,"./../js/currencylookup.js":3,"./../js/newslookup.js":4}]},{},[5]);
+},{"./../js/currencylookup.js":2}]},{},[3]);
