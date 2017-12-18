@@ -20,10 +20,11 @@ Things I should work on/be thinking about in coming weeks:
 5. Find more internship opportunities
 
 Priorities for end of course/after Epicodus:
-1. Stay on top of .NET course, no more absent days, be on time everyday.
+1. Stay on top of .NET course, no more absent days, be on time everyday
 2. Try to get adequate sleep
 3. Freshen up on terminology and whiteboarding
-4. Take the PHP for Wordpress course offered by Treehouse
+4. Clean up GitHub page and projects
+5. Take the PHP for Wordpress course offered by Treehouse
 
 ## Description
 
