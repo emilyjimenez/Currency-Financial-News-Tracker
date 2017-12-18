@@ -2,7 +2,7 @@
 
 ## _Independent Project - Epicodus JS Week 4_
 
-#### By _Emily Wells Jiménez
+#### By _Emily Wells Jiménez_
 
 ###### _12.15.2017_
 
@@ -12,14 +12,14 @@ _For this project I had my own free reign and decided to focus on API call backs
 
 _Unfortunately, I bit off WAY MORE than I could chew. There was no way I could include 3 separate APIs in my app with only 8 hours of work, so I stopped once I got curencylayer to work._
 
-Things I should work on/be thinking about in coming weeks:
+**Things I should work on/be thinking about in coming weeks:**
 1. Being able to scope work and know how long it will take
 2. Knowing the proper lingo for terms, methods etc
 3. Write a stack overflow question
 4. Learn another coding language
 5. Find more internship opportunities
 
-Priorities for end of course/after Epicodus:
+**Priorities for end of course/after Epicodus:**
 1. Stay on top of .NET course, no more absent days, be on time everyday
 2. Try to get adequate sleep
 3. Freshen up on terminology and whiteboarding
